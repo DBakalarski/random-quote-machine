@@ -4,7 +4,9 @@ var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&fi
 function getQuote() {
 	fetch(quoteUrl, { cache: "no-store"})
 		.then(function(resp) {
+			document.getElementById('loader').addClass("hide-loader");
 			return resp.json();
+
 		})
 		.then(createTweet);
 }
@@ -37,6 +39,7 @@ function createTweet(input) {
 document.addEventListener('DOMContentLoaded', function() {
     getQuote();
     document.querySelector('.trigger').addEventListener('click', function() {
+        document.querySelector('.box').innerHTML = 'Wczytywanie...'
         getQuote();
     });
 });
