@@ -14,6 +14,9 @@ header h1{
     font-weight: 400;
     font-size: 40px;
 }
+.box h3 {
+	min-height: 27px;
+}
 .quote {
 	min-height: 148px;
 	font-weight: 400;
@@ -59,7 +62,9 @@ main {
 }
 
 /* LOADER */
-/*.loader {
+.loader {
+	position: absolute;
+    right: calc(50vw - 76px);
     border: 16px solid #f3f3f3; 
     border-top: 16px solid #3498db;
     border-radius: 50%;
@@ -73,7 +78,3 @@ main {
    100% { transform: rotate(360deg); }
 }
 
-.hide-loader{
-display:none;
-}
-*/
